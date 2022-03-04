@@ -128,7 +128,7 @@ func main() {
 		}
 	case "list":
 		// To check if arguments are entered
-		if len(args) == 3 {
+		if len(args) > 2 {
 			fmt.Println("List has no additional arguments (Ex: go run main.go list)")
 			return
 		}
