@@ -36,7 +36,7 @@ type Deletable interface {
 	Delete()
 }
 
-// Delete to delete books
+// Delete to delete book
 func (book *Book) Delete() {
 	book.IsDeleted = true
 }
