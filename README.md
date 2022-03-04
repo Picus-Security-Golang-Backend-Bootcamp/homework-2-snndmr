@@ -21,7 +21,7 @@ A library application with search and listing features written in Go language.
 + To create binary file.
 
 	```cmd
-	cd <source_code_path> && go build -o Library_1.1.0
+	cd <source_code_path> && go build -o Library_1.1.0.exe
 	```
 
 + Sample scenario of the application.
