@@ -9,7 +9,7 @@ A library application with search and listing features written in Go language.
 ```properties
 ├── models
 │   ├── author.go
-|	└── book.go		
+|   └── book.go		
 ├── output
 │   └── output.png
 ├── utils
