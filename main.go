@@ -34,7 +34,7 @@ func main() {
 
 	// To check if arguments are entered
 	if len(args) == 1 {
-		fmt.Printf("Parameters you can use in the %s application:%-10s%s%-10s%s", filepath.Base(args[0]), "search", "To search books by name.", "list", "To list the books.")
+		fmt.Printf("Parameters you can use in the %s application:\n%-10s%s\n%-10s%s", filepath.Base(args[0]), "search", "To search books by name.", "list", "To list the books.")
 		return
 	}
 
