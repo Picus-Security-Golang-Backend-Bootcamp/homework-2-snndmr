@@ -37,12 +37,21 @@ type Deletable interface {
 }
 
 // Delete to delete book
-func (book *Book) Delete() {
+func (book *Book) Delete() error {
+	if book.IsDeleted {
+		return errors.New("No book found with this id! ")
+	}
+
 	book.IsDeleted = true
+	return nil
 }
 
 // Buy to buy books, error returns if stock is not enough
 func (book *Book) Buy(buyCount int) error {
+	if book.IsDeleted {
+		return errors.New("No book found with this id! ")
+	}
+
 	if buyCount < 1 {
 		return errors.New("You must enter the number of purchases as a positive integer. ")
 	}

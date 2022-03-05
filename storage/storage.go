@@ -32,25 +32,24 @@ func InsertBook(book *models.Book) {
 // GetBookById returns the book according to the book id given as the argument
 func GetBookById(id int) *models.Book {
 	for index, book := range books {
-		if !book.IsDeleted && book.Id == id {
+		if book.Id == id {
 			return &books[index]
 		}
 	}
 	return nil
 }
 
-// SearchInBooks returns the ids of the books found by searching in the book name, ISBN,
-// author name and stock id according to the substr given as an argument.
+// SearchInBooks returns the ids of the books found by searching in the book name,
+// ISBN, author name and stock id according to the substr given as an argument.
 func SearchInBooks(substr string) []int {
 	lowerSubstr := strings.ToLower(substr)
 
 	var ids []int
 	for _, book := range books {
-		if !book.IsDeleted &&
-			(strings.Contains(strings.ToLower(book.Name), lowerSubstr) ||
-				strings.Contains(strings.ToLower(book.ISBN), lowerSubstr) ||
-				strings.Contains(strings.ToLower(book.Author.Name), lowerSubstr) ||
-				strings.Contains(strings.ToLower(strconv.Itoa(book.StockId)), lowerSubstr)) {
+		if strings.Contains(strings.ToLower(book.Name), lowerSubstr) ||
+			strings.Contains(strings.ToLower(book.ISBN), lowerSubstr) ||
+			strings.Contains(strings.ToLower(book.Author.Name), lowerSubstr) ||
+			strings.Contains(strings.ToLower(strconv.Itoa(book.StockId)), lowerSubstr) {
 			ids = append(ids, book.Id)
 		}
 	}

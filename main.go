@@ -100,7 +100,12 @@ func main() {
 			return
 		}
 
-		book.Delete()
+		err = book.Delete()
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+
 		fmt.Println("Book deleted successfully!")
 	case "search":
 		// To check if the substr is given as an argument
@@ -122,7 +127,7 @@ func main() {
 		fmt.Printf("%-5s%-30s%-15s%-30s%-15s%-10s%-10s%-10s", "#", "Name", "Stock ID", "Author Name", "ISBN", "Pages", "Price", "Stock")
 		for _, id := range bookIds {
 			book := storage.GetBookById(id)
-			if book != nil && !book.IsDeleted {
+			if !book.IsDeleted {
 				fmt.Printf("\n%-5d%-30s%-15d%-30s%-15s%-10d%-10.2f%-10d", book.Id, book.Name, book.StockId, book.Author.Name, book.ISBN, book.PageCount, book.Price, book.StockCount)
 			}
 		}
