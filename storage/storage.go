@@ -1,7 +1,7 @@
 package storage
 
 import (
-	"Library/models"
+	"github.com/Picus-Security-Golang-Backend-Bootcamp/homework-2-snndmr/models"
 	"strconv"
 	"strings"
 )

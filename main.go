@@ -1,9 +1,9 @@
 package main
 
 import (
-	"Library/models"
-	"Library/storage"
 	"fmt"
+	"github.com/Picus-Security-Golang-Backend-Bootcamp/homework-2-snndmr/models"
+	"github.com/Picus-Security-Golang-Backend-Bootcamp/homework-2-snndmr/storage"
 	"math/rand"
 	"os"
 	"path/filepath"
